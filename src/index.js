@@ -18,6 +18,10 @@ function generateContent(event) {
     let prompt = `User instrusctions: Generate content about ${propmptInput.value}`;
     let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+    let contentElement = document.querySelector("#results");
+    contentElement.classList.remove("hidden");
+    contentElement.innerHTML = `<div class="generating">⏳Generating... </div>`;
+
 
     axios.get(apiURL).then(displayResult);
 
