@@ -1,7 +1,7 @@
 function displayResult(response) {
 
     new Typewriter("#results", {
-        strings: response.data.answer,
+        strings: response.data.answer.trim(),
         autoStart: true,
         delay: 1,
         cursor: "",
